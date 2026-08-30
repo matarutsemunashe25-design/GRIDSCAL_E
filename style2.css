@@ -1,0 +1,342 @@
+
+Style2 · CSS
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    min-height: 100vh;
+    padding: 40px;
+}
+ 
+ 
+/* =========================
+   UPLOAD
+========================= */
+ 
+form {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+ 
+.drag-area {
+    border: 2px dashed #999;
+    border-radius: 12px;
+    min-height: 250px;
+ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ 
+    background: white;
+ 
+    transition: 0.3s;
+}
+ 
+.drag-area:hover {
+    border-color: #333;
+    background: #fafafa;
+}
+ 
+.icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+ 
+.drag-area header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+ 
+.drag-area span {
+    margin: 10px 0;
+    color: #777;
+}
+ 
+.browse-btn {
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+ 
+    background: #222;
+    color: white;
+ 
+    cursor: pointer;
+}
+ 
+.browse-btn:hover {
+    background: #444;
+}
+ 
+ 
+/* =========================
+   CANVAS STACK
+========================= */
+ 
+.canvas-stack {
+    position: relative;
+    display: inline-block;
+ 
+    width: 90vw;
+ 
+    max-width: 800px;
+    max-height: 700px;
+ 
+    margin: 30px auto;
+}
+ 
+ 
+/* Portrait canvas */
+ 
+#canvas {
+    display: block;
+ 
+    width: 100%;
+    height: auto;
+    background: white;
+ 
+    border: 1px solid #ccc;
+}
+ 
+ 
+/* Grid canvas */
+ 
+#grid {
+    position: absolute;
+ 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+ 
+ 
+/* =========================
+   GRID CONTROLS
+========================= */
+ 
+.grid-controls {
+    margin-top: 20px;
+ 
+    padding: 20px;
+ 
+    background: white;
+ 
+    border-radius: 10px;
+ 
+    display: flex;
+ 
+    align-items: center;
+ 
+    justify-content: center;
+ 
+    gap: 15px;
+ 
+    flex-wrap: wrap;
+}
+ 
+.grid-controls h3 {
+    width: 100%;
+ 
+    text-align: center;
+ 
+    margin-bottom: 10px;
+}
+ 
+.grid-controls label {
+    font-weight: bold;
+}
+ 
+.grid-controls input {
+    width: 70px;
+ 
+    padding: 8px;
+ 
+    border: 1px solid #ccc;
+ 
+    border-radius: 5px;
+ 
+    text-align: center;
+}
+ 
+ 
+/* =========================
+   IMAGE CONTROLS
+========================= */
+ 
+.controls {
+    max-width: 900px;
+ 
+    margin: 30px auto;
+ 
+    padding: 20px;
+ 
+    background: white;
+ 
+    border-radius: 10px;
+}
+ 
+.controls h4 {
+    margin-bottom: 20px;
+}
+ 
+ 
+/* Control row */
+ 
+.controls-row {
+    display: flex;
+ 
+    flex-wrap: wrap;
+ 
+    gap: 15px;
+ 
+    justify-content: center;
+}
+ 
+.control {
+    display: flex;
+}
+ 
+.control button {
+    padding: 8px 12px;
+ 
+    border: 1px solid #ccc;
+ 
+    background: #eee;
+}
+ 
+.control button:first-child,
+.control button:last-child {
+    cursor: pointer;
+}
+ 
+ 
+/* =========================
+   FILTERS
+========================= */
+ 
+.filters {
+    display: flex;
+ 
+    flex-wrap: wrap;
+ 
+    gap: 10px;
+ 
+    margin-top: 20px;
+ 
+    justify-content: center;
+}
+ 
+.filters button {
+    padding: 10px 15px;
+ 
+    border: none;
+ 
+    border-radius: 5px;
+ 
+    background: #333;
+ 
+    color: white;
+ 
+    cursor: pointer;
+}
+ 
+ 
+/* =========================
+   ACTIONS
+========================= */
+ 
+.actions {
+    display: flex;
+ 
+    gap: 15px;
+ 
+    margin-top: 25px;
+ 
+    justify-content: center;
+}
+ 
+.actions button {
+    padding: 12px 25px;
+ 
+    border: none;
+ 
+    border-radius: 6px;
+ 
+    cursor: pointer;
+}
+ 
+#download-btn {
+    background: #2563eb;
+ 
+    color: white;
+}
+ 
+#revert-btn {
+    background: #dc2626;
+ 
+    color: white;
+}
+ 
+/* ===============================
+   GRAYSCALE BUTTON
+================================ */
+ 
+#grayscale-btn {
+    margin-top: 18px;
+ 
+    padding: 11px 22px;
+ 
+    border: 1px solid #444;
+    border-radius: 10px;
+ 
+    background: #f5f5f5;
+    color: #222;
+ 
+    font-size: 14px;
+    font-weight: 600;
+ 
+    cursor: pointer;
+ 
+    transition: all 0.2s ease;
+}
+ 
+ 
+/* Hover */
+ 
+#grayscale-btn:hover {
+    background: #222;
+    color: #fff;
+ 
+    transform: translateY(-2px);
+ 
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.18);
+}
+ 
+ 
+/* Click */
+ 
+#grayscale-btn:active {
+    transform: translateY(0);
+ 
+    box-shadow: none;
+}
+ 
+ 
+/* Grayscale is ON */
+ 
+#grayscale-btn.active {
+    background: #222;
+    color: #fff;
+ 
+    border-color: #222;
+}
+ 

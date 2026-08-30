@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Gridscale</title>
+ 
+    <link rel="stylesheet" href="style2.css">
+ 
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+ 
+    <style>
+ 
+        .canvas-stack {
+            position: relative;
+            display: inline-block;
+        }
+ 
+        .canvas-stack canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+ 
+        #canvas {
+            position: relative;
+        }
+ 
+    </style>
+ 
+</head>
+ 
+ 
+<body>
+ 
+ 
+    <!-- =========================
+         UPLOAD
+    ========================== -->
+ 
+    <form>
+ 
+        <div class="drag-area">
+ 
+            <div class="icon">
+                <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+ 
+            <header>
+                Drag & Drop your file here
+            </header>
+ 
+            <span>OR</span>
+ 
+            <button
+                type="button"
+                class="browse-btn"
+            >
+                Browse File
+            </button>
+ 
+            <input
+                type="file"
+                name="upload"
+                id="upload-file"
+                accept="image/*"
+                hidden
+            >
+ 
+        </div>
+ 
+    </form>
+ 
+ 
+    <!-- =========================
+         CANVAS
+    ========================== -->
+ 
+    <div class="canvas-stack">
+ 
+        <canvas id="canvas"></canvas>
+ 
+        <canvas id="grid"></canvas>
+ 
+    </div>
+ 
+ 
+    <!-- =========================
+         GRID CONTROLS
+    ========================== -->
+<section class="grid-controls">
+ 
+    <h3>Grid Settings</h3>
+ 
+    <!-- ROWS -->
+    <label for="rows">
+        Rows
+    </label>
+ 
+    <input
+        type="number"
+        id="rows"
+        value="5"
+        min="1"
+    >
+ 
+ 
+    <!-- COLUMNS -->
+    <label for="columns">
+        Columns
+    </label>
+ 
+    <input
+        type="number"
+        id="columns"
+        value="5"
+        min="1"
+    >
+ 
+ 
+    <!-- CELL WIDTH -->
+    <label for="cell-width">
+        Column Spacing (cm)
+    </label>
+ 
+    <input
+        type="text"
+        id="cell-width"
+        readonly
+    >
+ 
+ 
+    <!-- CELL HEIGHT -->
+    <label for="cell-height">
+        Row spacing (cm)
+    </label>
+ 
+    <input
+        type="text"
+        id="cell-height"
+        readonly
+    >
+ 
+ 
+    <!-- GRID COLOUR -->
+    <label for="grid-color">
+        Grid Colour
+    </label>
+ 
+    <input
+        type="color"
+        id="grid-color"
+        value="#ff2828"
+    >
+ 
+ 
+    <!-- GRID OPACITY -->
+    <label for="grid-opacity">
+        Grid Opacity
+    </label>
+ 
+    <input
+        type="range"
+        id="grid-opacity"
+        min="0"
+        max="100"
+        value="100"
+    >
+ 
+ 
+    <!-- LINE THICKNESS -->
+    <label for="line-thickness">
+        Line Thickness
+    </label>
+ 
+    <input
+        type="range"
+        id="line-thickness"
+        min="1"
+        max="10"
+        value="5"
+    >
+ 
+ 
+    <!-- GRAYSCALE -->
+    <button
+        type="button"
+        id="grayscale-btn"
+    >
+        Grayscale
+    </button>
+ <!--PAPER SIZE-->
+ <!--<label for="paper-size">
+    Paper Size
+</label>
+<!--<select id="paper-size">
+    <option value="A1">A1</option>
+    <option value="A2">A2</option>
+    <option value="A3">A3</option>
+    <option value="A4">A4</option>
+    <option value="A5">A5</option>
+</select>
+</section>
+ 
+    <!-- =========================
+         ACTIONS
+    ========================== -->
+    <section class="actions">
+ 
+        <button
+            type="button"
+            id="download-btn"
+        >
+            Download
+        </button>
+ 
+        <button
+            type="button"
+            id="revert-btn"
+        >
+            Revert
+        </button>
+ 
+    </section>
+ 
+    <script src="main.js"></script>
+ 
+</body>
+ 
+</html>
+ 
